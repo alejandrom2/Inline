@@ -2,10 +2,8 @@
 <html lang="{{ app()->getLocale() }}">
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href={{asset("img/apple-icon.png")}}>
-  <link rel="icon" type="image/png" href={{asset("img/favicon.png")}}>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title> Now UI Dashboard PRO by Creative Tim</title>
+  <title> Login Page</title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
@@ -38,17 +36,17 @@
       <div class="collapse navbar-collapse justify-content-end" id="navigation">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="../dashboard.html" class="nav-link">
+            <a href="{{url('/')}}" class="nav-link">
               <i class="now-ui-icons design_app"></i> Dashboard
             </a>
           </li>
           <li class="nav-item ">
-            <a href="register.html" class="nav-link">
+            <a href="{{url('register')}}" class="nav-link">
               <i class="now-ui-icons tech_mobile"></i> Register
             </a>
           </li>
           <li class="nav-item  active ">
-            <a href="login.html" class="nav-link">
+            <a href="{{url('login')}}" class="nav-link">
               <i class="now-ui-icons users_circle-08"></i> Login
             </a>
           </li>

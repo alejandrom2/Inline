@@ -196,15 +196,15 @@ class DashboardController extends Controller
     {
         return view('change-create');
     }
-    public function postIssueCreate(ChangeRequest $request)
+    public function postChangeCreate(ChangeRequest $request)
     {
         Change::create([
-            'name'           => $request['name'];
-            'requester'      => $request['requester'];
-            'date_requested' => Carbon::parse($request['date_requested']);
-            'date_updated'   => Carbon::parse($request['date_updated']);
-            'status'         => $request['status'];
-            'description'    => $request['description'];
+            'name'           => $request['name'],
+            'requester'      => $request['requester'],
+            'date_requested' => Carbon::parse($request['date_requested']),
+            'date_updated'   => Carbon::parse($request['date_updated']),
+            'status'         => $request['status'],
+            'description'    => $request['description']
         ]);
 
         Session::flash('message', "Change Created Successfully");

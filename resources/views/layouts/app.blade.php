@@ -2,8 +2,6 @@
 <html lang="{{ app()->getLocale() }}">
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href={{asset("img/apple-icon.png")}}>
-  <link rel="icon" type="image/png" href={{asset("img/favicon.png")}}>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title> Now UI Dashboard PRO by Creative Tim</title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -11,10 +9,10 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!-- CSS Files -->
-  <link href="css/bootstrap.min.css" rel="stylesheet" />
-  <link href={{asset("css/now-ui-dashboard.css")}} rel="stylesheet" />
+  <link href={{asset("/css/bootstrap.min.css")}} rel="stylesheet" />
+  <link href={{asset("/css/now-ui-dashboard.css")}} rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href={{asset("demo/demo.css")}} rel="stylesheet" />
+  <link href={{asset("/demo/demo.css")}} rel="stylesheet" />
 </head>
 
 <body>
@@ -28,7 +26,7 @@
       <div class="sidebar-wrapper">
         <div class="user">
           <div class="photo">
-            <img src={{asset("img/james.jpg")}} />
+            <img src={{asset("/img/james.jpg")}} />
           </div>
           <div class="info">
             <a data-toggle="collapse" href="#collapseExample" class="collapsed">
@@ -294,7 +292,7 @@
       </div>
     </div>
     <div class="main-panel">
-      <!-- Navbar -->
+     <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
         <div class="container-fluid">
           <div class="navbar-wrapper">
@@ -305,7 +303,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo">Dashboard</a>
+            <a class="navbar-brand" href="#pablo">Regular Forms</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -322,468 +320,102 @@
               </div>
             </form>
             <ul class="navbar-nav">
-            @auth
+              <li class="nav-item">
+                <a class="nav-link" href="#pablo">
+                  <i class="now-ui-icons media-2_sound-wave"></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Stats</span>
+                  </p>
+                </a>
+              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="now-ui-icons users_single-02"></i>
+                  <i class="now-ui-icons location_world"></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Some Actions</span>
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#pablo">
+                  <i class="now-ui-icons users_single-02"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Account</span>
                   </p>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
-                </a>
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
-                </div>
               </li>
-              @endauth
             </ul>
           </div>
         </div>
       </nav>
       <!-- End Navbar -->
-      <div class="panel-header panel-header-lg">
-        {{-- <canvas id="bigDashboardChart"></canvas> --}}
+      <div class="panel-header panel-header-sm">
       </div>
       <div class="content">
-            @yield('content')
-            {{-- <div class="row">
-              <div class="col-md-12">
-                <div class="card card-stats card-raised">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-md-3">
-                        <div class="statistics">
-                          <div class="info">
-                            <div class="icon icon-primary">
-                              <i class="now-ui-icons ui-2_chat-round"></i>
-                            </div>
-                            <h3 class="info-title">859</h3>
-                            <h6 class="stats-title">Messages</h6>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="statistics">
-                          <div class="info">
-                            <div class="icon icon-success">
-                              <i class="now-ui-icons business_money-coins"></i>
-                            </div>
-                            <h3 class="info-title">
-                              <small>$</small>3,521</h3>
-                            <h6 class="stats-title">Today Revenue</h6>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="statistics">
-                          <div class="info">
-                            <div class="icon icon-info">
-                              <i class="now-ui-icons users_single-02"></i>
-                            </div>
-                            <h3 class="info-title">562</h3>
-                            <h6 class="stats-title">Customers</h6>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="statistics">
-                          <div class="info">
-                            <div class="icon icon-danger">
-                              <i class="now-ui-icons objects_support-17"></i>
-                            </div>
-                            <h3 class="info-title">353</h3>
-                            <h6 class="stats-title">Support Requests</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-4 col-md-6">
-                <div class="card card-chart">
-                  <div class="card-header">
-                    <h5 class="card-category">Active Users</h5>
-                    <h2 class="card-title">34,252</h2>
-                    <div class="dropdown">
-                      <button type="button" class="btn btn-round btn-default dropdown-toggle btn-simple btn-icon no-caret" data-toggle="dropdown">
-                        <i class="now-ui-icons loader_gear"></i>
-                      </button>
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <a class="dropdown-item text-danger" href="#">Remove Data</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="chart-area">
-                      <canvas id="activeUsers"></canvas>
-                    </div>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="flag">
-                                <img src={{asset("img/US.png")}}>
-                              </div>
-                            </td>
-                            <td>USA</td>
-                            <td class="text-right">
-                              2.920
-                            </td>
-                            <td class="text-right">
-                              53.23%
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="flag">
-                                <img src={{asset("img/DE.png")}}>
-                              </div>
-                            </td>
-                            <td>Germany</td>
-                            <td class="text-right">
-                              1.300
-                            </td>
-                            <td class="text-right">
-                              20.43%
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="flag">
-                                <img src={{asset("img/AU.png")}}>
-                              </div>
-                            </td>
-                            <td>Australia</td>
-                            <td class="text-right">
-                              760
-                            </td>
-                            <td class="text-right">
-                              10.35%
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="flag">
-                                <img src={{asset("img/GB.png")}}>
-                              </div>
-                            </td>
-                            <td>United Kingdom</td>
-                            <td class="text-right">
-                              690
-                            </td>
-                            <td class="text-right">
-                              7.87%
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="flag">
-                                <img src={{asset("img/RO.png")}}>
-                              </div>
-                            </td>
-                            <td>Romania</td>
-                            <td class="text-right">
-                              600
-                            </td>
-                            <td class="text-right">
-                              5.94%
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="flag">
-                                <img src={{asset("img/BR.png")}}>
-                              </div>
-                            </td>
-                            <td>Brasil</td>
-                            <td class="text-right">
-                              550
-                            </td>
-                            <td class="text-right">
-                              4.34%
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <div class="stats">
-                      <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="card card-chart">
-                  <div class="card-header">
-                    <h5 class="card-category">Summer Email Campaign</h5>
-                    <h2 class="card-title">55,300</h2>
-                    <div class="dropdown">
-                      <button type="button" class="btn btn-round btn-default dropdown-toggle btn-simple btn-icon no-caret" data-toggle="dropdown">
-                        <i class="now-ui-icons loader_gear"></i>
-                      </button>
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <a class="dropdown-item text-danger" href="#">Remove Data</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="chart-area">
-                      <canvas id="emailsCampaignChart"></canvas>
-                    </div>
-                    <div class="card-progress">
-                      <div class="progress-container">
-                        <span class="progress-badge">Delivery Rate</span>
-                        <div class="progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-                            <span class="progress-value">90%</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-container progress-success">
-                        <span class="progress-badge">Open Rate</span>
-                        <div class="progress">
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                            <span class="progress-value">60%</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-container progress-info">
-                        <span class="progress-badge">Click Rate</span>
-                        <div class="progress">
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 12%;">
-                            <span class="progress-value">12%</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-container progress-warning">
-                        <span class="progress-badge">Hard Bounce</span>
-                        <div class="progress">
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 5%;">
-                            <span class="progress-value">5%</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-container progress-danger">
-                        <span class="progress-badge">Spam Report</span>
-                        <div class="progress">
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0.11%;">
-                            <span class="progress-value">0.11%</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <div class="stats">
-                      <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="card card-chart">
-                  <div class="card-header">
-                    <h5 class="card-category">Active Countries</h5>
-                    <h2 class="card-title">105</h2>
-                  </div>
-                  <div class="card-body">
-                    <div class="chart-area">
-                      <canvas id="activeCountries"></canvas>
-                    </div>
-                    <div id="worldMap" class="map"></div>
-                  </div>
-                  <div class="card-footer">
-                    <div class="stats">
-                      <i class="now-ui-icons ui-2_time-alarm"></i> Last 7 days
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h4 class="card-title"> Best Selling Products</h4>
-                  </div>
-                  <div class="card-body">
-                    <div class="table-responsive">
-                      <table class="table table-shopping">
-                        <thead class="">
-                          <th class="text-center">
-                          </th>
-                          <th>
-                            Product
-                          </th>
-                          <th>
-                            Color
-                          </th>
-                          <th>
-                            Size
-                          </th>
-                          <th class="text-right">
-                            Price
-                          </th>
-                          <th class="text-right">
-                            Qty
-                          </th>
-                          <th class="text-right">
-                            Amount
-                          </th>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="img-container">
-                                <img src={{asset("img/saint-laurent.jpg")}} alt="...">
-                              </div>
-                            </td>
-                            <td class="td-name">
-                              <a href="#jacket">Suede Biker Jacket</a>
-                              <br />
-                              <small>by Saint Laurent</small>
-                            </td>
-                            <td>
-                              Black
-                            </td>
-                            <td>
-                              M
-                            </td>
-                            <td class="td-number">
-                              <small>€</small>3,390
-                            </td>
-                            <td class="td-number">
-                              1
-                            </td>
-                            <td class="td-number">
-                              <small>€</small>549
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="img-container">
-                                <img src={{asset("img/balmain.jpg")}} alt="...">
-                              </div>
-                            </td>
-                            <td class="td-name">
-                              <a href="#pants">Jersey T-Shirt</a>
-                              <br />
-                              <small>by Balmain</small>
-                            </td>
-                            <td>
-                              Black
-                            </td>
-                            <td>
-                              M
-                            </td>
-                            <td class="td-number">
-                              <small>€</small>499
-                            </td>
-                            <td class="td-number">
-                              2
-                            </td>
-                            <td class="td-number">
-                              <small>€</small>998
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="img-container">
-                                <img src={{asset("img/prada.jpg")}} alt="...">
-                              </div>
-                            </td>
-                            <td class="td-name">
-                              <a href="#nothing">Slim-Fit Swim Short</a>
-                              <br />
-                              <small>by Prada</small>
-                            </td>
-                            <td>
-                              Red
-                            </td>
-                            <td>
-                              M
-                            </td>
-                            <td class="td-number">
-                              <small>€</small>200
-                            </td>
-                            <td class="td-number">
-                              1
-                            </td>
-                            <td class="td-number">
-                              <small>€</small>799
-                            </td>
-                          </tr>
-                          <tr>
-                            <td colspan="5">
-                            </td>
-                            <td class="td-total">
-                              Total
-                            </td>
-                            <td class="td-price">
-                              <small>€</small>2,346
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> --}}
+        @yield('content')
       </div>
       <footer class="footer">
         <div class="container-fluid">
           <nav>
             <ul>
+              <li>
+                <a href="https://www.creative-tim.com">
+                  Creative Tim
+                </a>
+              </li>
+              <li>
+                <a href="http://presentation.creative-tim.com">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="http://blog.creative-tim.com">
+                  Blog
+                </a>
+              </li>
             </ul>
           </nav>
+          <div class="copyright">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear())
+            </script>, Designed by
+            <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
+            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+          </div>
         </div>
       </footer>
     </div>
   </div>
 </body>
 <!--   Core JS Files   -->
-<script src={{asset("js/core/jquery.min.js")}}></script>
-<script src={{asset("js/core/popper.min.js")}}></script>
-<script src={{asset("js/core/bootstrap.min.js")}}></script>
-<script src={{asset("js/plugins/perfect-scrollbar.jquery.min.js")}}></script>
-<script src={{asset("js/plugins/moment.min.js")}}></script>
-<script src={{asset("js/plugins/bootstrap-switch.js")}}></script>
-<script src={{asset("js/plugins/sweetalert2.min.js")}}></script>
-<script src={{asset("js/plugins/jquery.validate.min.js")}}></script>
-<script src={{asset("js/plugins/jquery.bootstrap-wizard.js")}}></script>
-<script src={{asset("js/plugins/bootstrap-selectpicker.js")}}></script>
-<script src={{asset("js/plugins/bootstrap-datetimepicker.js")}}></script>
-<script src={{asset("js/plugins/jquery.dataTables.min.js")}}></script>
-<script src={{asset("js/plugins/bootstrap-tagsinput.js")}}></script>
-<script src={{asset("js/plugins/jasny-bootstrap.min.js")}}></script>
-<script src={{asset("js/plugins/fullcalendar.min.js")}}></script>
-<script src={{asset("js/plugins/jquery-jvectormap.js")}}></script>
-<script src={{asset("js/plugins/nouislider.min.js")}}></script>
+<script src={{asset("/js/core/jquery.min.js")}}></script>
+<script src={{asset("/js/core/popper.min.js")}}></script>
+<script src={{asset("/js/core/bootstrap.min.js")}}></script>
+<script src={{asset("/js/plugins/perfect-scrollbar.jquery.min.js")}}></script>
+<script src={{asset("/js/plugins/moment.min.js")}}></script>
+<script src={{asset("/js/plugins/bootstrap-switch.js")}}></script>
+<script src={{asset("/js/plugins/sweetalert2.min.js")}}></script>
+<script src={{asset("/js/plugins/jquery.validate.min.js")}}></script>
+<script src={{asset("/js/plugins/jquery.bootstrap-wizard.js")}}></script>
+<script src={{asset("/js/plugins/bootstrap-selectpicker.js")}}></script>
+<script src={{asset("/js/plugins/bootstrap-datetimepicker.js")}}></script>
+<script src={{asset("/js/plugins/jquery.dataTables.min.js")}}></script>
+<script src={{asset("/js/plugins/bootstrap-tagsinput.js")}}></script>
+<script src={{asset("/js/plugins/jasny-bootstrap.min.js")}}></script>
+<script src={{asset("/js/plugins/fullcalendar.min.js")}}></script>
+<script src={{asset("/js/plugins/jquery-jvectormap.js")}}></script>
+<script src={{asset("/js/plugins/nouislider.min.js")}}></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-<script src={{asset("js/plugins/chartjs.min.js")}}></script>
-<script src={{asset("js/plugins/bootstrap-notify.js")}}></script>
-<script src={{asset("js/now-ui-dashboard.js")}}></script>
-<script src={{asset("demo/demo.js")}}></script>
+<script src={{asset("/js/plugins/chartjs.min.js")}}></script>
+<script src={{asset("/js/plugins/bootstrap-notify.js")}}></script>
+<script src={{asset("/js/now-ui-dashboard.js")}}></script>
+<script src={{asset("/demo/demo.js")}}></script>
 <script>
   $(document).ready(function() {
     // Javascript method's body can be found in assets/js/demos.js
