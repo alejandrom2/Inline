@@ -19,7 +19,6 @@
               <th>ID</th>
               <th>Name</th>
               <th>Assigned To</th>
-              <th>Status</th>
               <th>Start Date</th>
               <th>Due Date</th>
             </tr>
@@ -29,7 +28,6 @@
               <th>ID</th>
               <th>Name</th>
               <th>Assigned To</th>
-              <th>Status</th>
               <th>Start Date</th>
               <th>Due Date</th>
             </tr>
@@ -40,7 +38,6 @@
                   <td>{{$task->id}}</td>
                   <td>{{$task->name}}</td>
                   <td>{{$task->resource_assigned}}</td>
-                  <td>{{$task->status}}</td>
                   <td>{{$task->start_date}}</td>
                   <td>{{$task->end_date?:"N/A"}}</td>
                 </tr>

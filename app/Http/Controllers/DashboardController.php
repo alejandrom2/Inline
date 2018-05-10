@@ -96,7 +96,8 @@ class DashboardController extends Controller
     }
     public function getReferenceDocumenetCreate()
     {
-        return view('reference-create');
+        $references = Reference::all();
+        return view('reference-create',compact('references'));
     }
     public function postReferenceDocumenetCreate(ReferenceDocumenetRequest $request)
     {
