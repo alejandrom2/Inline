@@ -1361,16 +1361,13 @@ demo = {
 
     },
 
-	showNotification: function(from, align){
-    	color = 'primary';
-
+	showNotification: function(from, align,message,color){
     	$.notify({
-        	icon: "now-ui-icons ui-1_bell-53",
-        	message: "Welcome to <b>Now Ui Dashboard Pro</b> - a beautiful freebie for every web developer."
-
+        	icon: "fa fa-exclamation",
+        	message: message
         },{
             type: color,
-            timer: 8000,
+            timer: 1000,
             placement: {
                 from: from,
                 align: align

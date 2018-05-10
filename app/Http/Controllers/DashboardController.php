@@ -37,7 +37,8 @@ class DashboardController extends Controller
     }
     public function getTaskCreate()
     {
-        return view('task-create');
+        $tasks = Tasks::all();
+        return view('task-create',compact('tasks'));
     }
     public function postTaskCreate(TaskRequest $request)
     {

@@ -11,7 +11,6 @@
   <!-- CSS Files -->
   <link href="css/bootstrap.min.css" rel="stylesheet" />
   <link href={{asset("css/now-ui-dashboard.css")}} rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href={{asset("demo/demo.css")}} rel="stylesheet" />
 </head>
 <body class=" sidebar-mini">
