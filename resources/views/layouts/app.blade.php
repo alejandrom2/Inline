@@ -220,7 +220,7 @@
     $(document).ready(function() {
       var message = "";
       @foreach ($errors->all() as $error)
-       message += "<li>{{ $error }}</li>"
+       message += "<p>{{ $error }}</p>"
       @endforeach
     demo.showNotification('top','right',message,'danger');
     });

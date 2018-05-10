@@ -138,4 +138,15 @@
     demo.checkFullPageBackgroundImage();
   });
 </script>
+@if ($errors->any())
+  <script>
+    $(document).ready(function() {
+      var message = "";
+      @foreach ($errors->all() as $error)
+       message += "<p>{{ $error }}</p>"
+      @endforeach
+    demo.showNotification('top','right',message,'danger');
+    });
+  </script>
+@endif
 </html>
