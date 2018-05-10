@@ -7,7 +7,7 @@
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
   <!-- CSS Files -->
   <link href={{asset("/css/bootstrap.min.css")}} rel="stylesheet" />
   <link href={{asset("/css/now-ui-dashboard.css")}} rel="stylesheet" />
@@ -24,100 +24,64 @@
         </a>
       </div>
       <div class="sidebar-wrapper">
-        <div class="user">
-          <div class="photo">
-            <img src={{asset("/img/james.jpg")}} />
-          </div>
-          <div class="info">
-            <a data-toggle="collapse" href="#collapseExample" class="collapsed">
-              <span>
-                James Amos
-                <b class="caret"></b>
-              </span>
-            </a>
-            <div class="clearfix"></div>
-            <div class="collapse" id="collapseExample">
-              <ul class="nav">
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">MP</span>
-                    <span class="sidebar-normal">My Profile</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">EP</span>
-                    <span class="sidebar-normal">Edit Profile</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">S</span>
-                    <span class="sidebar-normal">Settings</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
         <ul class="nav">
           <li class="active">
             <a href="../examples/dashboard.html">
-              <i class="now-ui-icons design_app"></i>
+              <i class="fa fa-list-ul"></i>
               <p>Tasks</p>
             </a>
           </li>
           <li>
             <a href="../examples/dashboard.html">
-              <i class="now-ui-icons design_app"></i>
+              <i class="fa fa-th-large"></i>
               <p>Deliverables</p>
             </a>
           </li>
           <li>
             <a href="../examples/dashboard.html">
-              <i class="now-ui-icons design_app"></i>
+              <i class="fa fa-inbox"></i>
               <p>Action Items</p>
             </a>
           </li>
           <li>
             <a href="../examples/dashboard.html">
-              <i class="now-ui-icons design_app"></i>
+              <i class="fa fa-pencil-alt"></i>
               <p>Changes</p>
             </a>
           </li>
           <li>
             <a href="../examples/dashboard.html">
-              <i class="now-ui-icons design_app"></i>
+              <i class="fa fa-exclamation-triangle"></i>
               <p>Issues</p>
             </a>
           </li>
           <li>
             <a href="../examples/dashboard.html">
-              <i class="now-ui-icons design_app"></i>
+              <i class="fa fa-users"></i>
               <p>Resources</p>
             </a>
           </li>
           <li>
             <a href="../examples/dashboard.html">
-              <i class="now-ui-icons design_app"></i>
+              <i class="fa fa-comments"></i>
               <p>Decisions</p>
             </a>
           </li>
           <li>
             <a href="../examples/dashboard.html">
-              <i class="now-ui-icons design_app"></i>
+              <i class="fa fa-asterisk"></i>
               <p>Risks</p>
             </a>
           </li>
           <li>
             <a href="../examples/dashboard.html">
-              <i class="now-ui-icons design_app"></i>
+              <i class="fa fa-file-alt"></i>
               <p>Reference Documents</p>
             </a>
           </li>
           <li>
             <a href="../examples/dashboard.html">
-              <i class="now-ui-icons design_app"></i>
+              <i class="fa fa-handshake"></i>
               <p>Requirements</p>
             </a>
           </li>
