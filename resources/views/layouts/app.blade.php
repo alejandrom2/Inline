@@ -174,15 +174,6 @@
 <script src={{asset("/js/plugins/bootstrap-notify.js")}}></script>
 <script src={{asset("/js/now-ui-dashboard.js")}}></script>
 <script src={{asset("/demo/demo.js")}}></script>
-<script>
-  $(document).ready(function() {
-    // Javascript method's body can be found in assets/js/demos.js
-    demo.initDashboardPageCharts();
-
-    demo.initVectorMap();
-
-  });
-</script>
 @yield('scripts')
 @if ($errors->any())
   <script>

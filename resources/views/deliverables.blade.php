@@ -39,7 +39,7 @@
                   <td>{{$deliverable->name}}</td>
                   <td>{{$deliverable->status}}</td>
                   <td>{{$deliverable->start_date}}</td>
-                  <td>{{$deliverable->due_date?:"N/A"}}</td>
+                  <td>{{$deliverable->end_date?:"N/A"}}</td>
                 </tr>
                 <tr>
 				    <td colspan="5">
