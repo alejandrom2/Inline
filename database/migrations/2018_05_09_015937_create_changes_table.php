@@ -17,7 +17,7 @@ class CreateChangesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('requester');
-            $table->date('date_reqeusted');
+            $table->date('date_requested');
             $table->date('date_updated');
             $table->string('status');
             $table->text('description');

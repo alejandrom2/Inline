@@ -9,11 +9,15 @@ use App\Tasks;
 use App\Deliverable;
 use App\Reference;
 use App\Requirements;
+use App\Issues;
+use App\Risks;
 
 use App\Http\Requests\TaskRequest;
 use App\Http\Requests\DeliverableRequest;
 use App\Http\Requests\ReferenceDocumenetRequest;
 use App\Http\Requests\RequirementRequest;
+use App\Http\Requests\IssueRequest;
+use App\Http\Requests\RisksRequest;
 
 use Session;
 
@@ -146,4 +150,97 @@ class DashboardController extends Controller
 
         return redirect()->route('getRequirements');
     }
+
+    /**
+     * Issues Get, Create Page, Post Create with Validation
+     */
+
+    public function getIssues()
+    {
+        $issues = Issues::all();
+        return view('issues',compact('issues'));
+    }
+    public function getIssueCreate()
+    {
+        return view('issues-create');
+    }
+    public function postIssueCreate(IssueRequest $request)
+    {
+        Issues::create([
+            'name'               => $request['name'],
+            'assigned'           => Carbon::parse($request['assigned'])?:null,
+            'expected'           => Carbon::parse($request['expected'])?:null,
+            'completed'          => Carbon::parse($request['completed'])?:null,
+            'priority'           => $request['priority'],
+            'severity'           => $request['severity'],
+            'status'             => $request['status'],
+            'description'        => $request['description'],
+            'status_description' => $request['status_description']
+        ]);
+
+        Session::flash('message', "Issue Created Successfully");
+
+        return redirect()->route('getIssues');
+    }
+
+    /**
+     * Issues Get, Create Page, Post Create with Validation
+     */
+
+    public function getChanges()
+    {
+        $changes = Changes::all();
+        return view('changes',compact('changes'));
+    }
+    public function getChangesCreate()
+    {
+        return view('change-create');
+    }
+    public function postIssueCreate(ChangeRequest $request)
+    {
+        Change::create([
+            'name'           => $request['name'];
+            'requester'      => $request['requester'];
+            'date_requested' => Carbon::parse($request['date_requested']);
+            'date_updated'   => Carbon::parse($request['date_updated']);
+            'status'         => $request['status'];
+            'description'    => $request['description'];
+        ]);
+
+        Session::flash('message', "Change Created Successfully");
+
+        return redirect()->route('getChanges');
+    }
+
+    /**
+     * Issues Get, Create Page, Post Create with Validation
+     */
+
+    public function getRisks()
+    {
+        $changes = Risks::all();
+        return view('changes',compact('changes'));
+    }
+    public function getRiskCreate()
+    {
+        return view('risks-create');
+    }
+    public function postRiskCreate(RisksRequest $request)
+    {
+        Risks::create([
+            'name'        => $request['name'],
+            'risk_score'  => $request['risk_score'],
+            'action_by'   => $request['action_by'],
+            'category'    => $request['category'],
+            'impact'      => $request['impact'],
+            'probability' => $request['probability'],
+            'mitigation'  => $request['mitigation'],
+            'contingency' => $request['contingency']
+        ]);
+
+        Session::flash('message', "Risk Created Successfully");
+
+        return redirect()->route('getRisks');
+    }
+
 }

@@ -15,6 +15,6 @@ mix.copyDirectory('node_modules/now-ui-dashboard/assets/js', 'public/js')
 	.copyDirectory('node_modules/now-ui-dashboard/assets/fonts', 'public/fonts')
    .sass('node_modules/now-ui-dashboard/assets/scss/now-ui-dashboard.scss', 'public/css/dashboard.css');
 
-mix.copyDirectory('node_modules/now-ui-kit/assets/js', 'public/js')
-   .copyDirectory('node_modules/now-ui-kit/assets/fonts', 'public/fonts')
-   .sass('node_modules/now-ui-kit/assets/scss/now-ui-kit.scss', 'public/css/kit.css');
+// mix.copyDirectory('node_modules/now-ui-kit/assets/js', 'public/js')
+//    .copyDirectory('node_modules/now-ui-kit/assets/fonts', 'public/fonts')
+//    .sass('node_modules/now-ui-kit/assets/sass/now-ui-kit.scss', 'public/css/kit.css');
