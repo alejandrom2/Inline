@@ -67,7 +67,8 @@ class DashboardController extends Controller
     }
     public function getDeliverableCreate()
     {
-        return view('deliverable-create');
+        $deliverables = Deliverable::all();
+        return view('deliverable-create',compact('deliverables'));
     }
     public function postDeliverableCreate(DeliverableRequest $request)
     {

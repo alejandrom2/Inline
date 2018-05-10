@@ -25,20 +25,20 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="active">
-            <a href="../examples/dashboard.html">
+          <li>
+            <a href="{{url('/task')}}">
               <i class="fa fa-list-ul"></i>
               <p>Tasks</p>
             </a>
           </li>
           <li>
-            <a href="../examples/dashboard.html">
+            <a href="{{url('/deliverable')}}">
               <i class="fa fa-th-large"></i>
               <p>Deliverables</p>
             </a>
           </li>
           <li>
-            <a href="../examples/dashboard.html">
+            <a href="">
               <i class="fa fa-inbox"></i>
               <p>Action Items</p>
             </a>
@@ -74,7 +74,7 @@
             </a>
           </li>
           <li>
-            <a href="../examples/dashboard.html">
+            <a href="{{url('/reference-document')}}">
               <i class="fa fa-file-alt"></i>
               <p>Reference Documents</p>
             </a>
