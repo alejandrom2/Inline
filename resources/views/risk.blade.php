@@ -5,8 +5,8 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Deliverables</h4>
-        <a href="{{url('deliverable/create')}}" class="btn btn-info btn-square btn-icon pull-right">
+        <h4 class="card-title">Risks</h4>
+        <a href="{{url('risk/create')}}" class="btn btn-info btn-square btn-icon pull-right">
               <i class="fa fa-plus"></i>
       </a>
       </div>
@@ -18,38 +18,46 @@
             <tr>
               <th>ID</th>
               <th>Name</th>
-              <th>Status</th>
-              <th>Start Date</th>
-              <th>Due Date</th>
+              <th>Risk Score</th>
+              <th>Action By</th>
+              <th>Category</th>
+              <th>Impact</th>
+              <th>Probability</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
               <th>ID</th>
               <th>Name</th>
-              <th>Status</th>
-              <th>Start Date</th>
-              <th>Due Date</th>
+              <th>Risk Score</th>
+              <th>Action By</th>
+              <th>Category</th>
+              <th>Impact</th>
+              <th>Probability</th>
             </tr>
           </tfoot>
           <tbody>
-			@foreach($deliverables as $deliverable)
+			@foreach($risks as $risk)
                 <tr>
-                  <td>{{$deliverable->id}}</td>
-                  <td>{{$deliverable->name}}</td>
-                  <td>{{$deliverable->status}}</td>
-                  <td>{{$deliverable->start_date}}</td>
-                  <td>{{$deliverable->end_date?:"N/A"}}</td>
+                  <td>{{$risk->id}}</td>
+                  <td>{{$risk->name}}</td>
+                  <td>{{$risk->risk_score}}</td>
+                  <td>{{$risk->action_by}}</td>
+                  <td>{{$risk->category}}</td>
+                  <td>{{$risk->impact}}</td>
+                  <td>{{$risk->probability}}</td>
                 </tr>
                 <tr>
-				    <td colspan="5">
-				        <table class="table table-striped table-bordered dataTable" cellpadding="5" cellspacing="0" border="0">
-				            <tbody>
-				                <tr>
-				                    <td>Description:</td>
-				                </tr>
-				                <tr>
-				                    <td>{{$deliverable->description}}</td>
+            <td colspan="7">
+                <table class="table table-striped table-bordered dataTable" cellpadding="7" cellspacing="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td>Mitigation:</td>
+                            <td>Contingency<td>
+                        </tr>
+                        <tr>
+                            <td>{{$risk->mitigation}}</td>
+                            <td>{{$risk->contingency}}</td>
 				                </tr>
 				            </tbody>
 				        </table>

@@ -34,4 +34,14 @@ Route::get('/requirement','DashboardController@getRequirements')->name('getRequi
 Route::get('/requirement/create','DashboardController@getRequirementCreate')->name('getRequirementCreate');
 Route::post('/requirement/create','DashboardController@postRequirementCreate')->name('postRequirementCreate');
 
+
+Route::get('/change','DashboardController@getChange')->name('getChange');
+Route::get('/change/create','DashboardController@getChangeCreate')->name('getChangeCreate');
+Route::post('/change/create','DashboardController@postChangeCreate')->name('postChangeCreate');
+
+
+Route::get('/risk','DashboardController@getRisk')->name('getRisk');
+Route::get('/risk/create','DashboardController@getRiskCreate')->name('getRiskCreate');
+Route::post('/risk/create','DashboardController@postRiskCreate')->name('postRiskCreate');
+
 Auth::routes();

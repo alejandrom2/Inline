@@ -38,37 +38,37 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="{{url('/action-item')}}">
               <i class="fa fa-inbox"></i>
               <p>Action Items</p>
             </a>
           </li>
           <li>
-            <a href="../examples/dashboard.html">
+            <a href="{{url('/changes')}}">
               <i class="fa fa-pencil-alt"></i>
               <p>Changes</p>
             </a>
           </li>
           <li>
-            <a href="../examples/dashboard.html">
+            <a href="{{url('/issues')}}">
               <i class="fa fa-exclamation-triangle"></i>
               <p>Issues</p>
             </a>
           </li>
           <li>
-            <a href="../examples/dashboard.html">
+            <a href="{{url('/resources')}}">
               <i class="fa fa-users"></i>
               <p>Resources</p>
             </a>
           </li>
           <li>
-            <a href="../examples/dashboard.html">
+            <a href="{{url('/decisions')}}">
               <i class="fa fa-comments"></i>
               <p>Decisions</p>
             </a>
           </li>
           <li>
-            <a href="../examples/dashboard.html">
+            <a href="{{url('/risk')}}">
               <i class="fa fa-asterisk"></i>
               <p>Risks</p>
             </a>
@@ -80,7 +80,7 @@
             </a>
           </li>
           <li>
-            <a href="../examples/dashboard.html">
+            <a href="{{url('/requirements')}}">
               <i class="fa fa-handshake"></i>
               <p>Requirements</p>
             </a>

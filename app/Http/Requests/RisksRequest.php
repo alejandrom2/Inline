@@ -13,7 +13,7 @@ class RisksRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class RisksRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'        => 'required',
+            'risk_score'  => 'required',
+            'action_by'   => 'required',
+            'category'    => 'required',
+            'impact'      => 'required',
+            'probability' => 'required',
+            'mitigation'  => 'required',
+            'contingency' => 'required'
         ];
     }
 }

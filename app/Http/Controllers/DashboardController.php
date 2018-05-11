@@ -10,7 +10,7 @@ use App\Deliverable;
 use App\Reference;
 use App\Requirements;
 use App\Issues;
-use App\Risks;
+use App\Risk;
 
 use App\Http\Requests\TaskRequest;
 use App\Http\Requests\DeliverableRequest;
@@ -219,31 +219,32 @@ class DashboardController extends Controller
      * Issues Get, Create Page, Post Create with Validation
      */
 
-    public function getRisks()
+    public function getRisk()
     {
-        $changes = Risks::all();
-        return view('changes',compact('changes'));
+        $risks = Risk::all();
+        return view('risk',compact('risks'));
     }
     public function getRiskCreate()
     {
-        return view('risks-create');
+        $risks = Risk::all();
+        return view('risk-create',compact('risks'));
     }
     public function postRiskCreate(RisksRequest $request)
     {
-        Risks::create([
+        Risk::create([
             'name'        => $request['name'],
-            'risk_score'  => $request['risk_score'],
+            'risk_score'  => (int) $request['risk_score'],
             'action_by'   => $request['action_by'],
             'category'    => $request['category'],
             'impact'      => $request['impact'],
-            'probability' => $request['probability'],
+            'probability' => ((int) $request['probability'] / 100),
             'mitigation'  => $request['mitigation'],
             'contingency' => $request['contingency']
         ]);
 
         Session::flash('message', "Risk Created Successfully");
 
-        return redirect()->route('getRisks');
+        return redirect()->route('getRisk');
     }
 
 }

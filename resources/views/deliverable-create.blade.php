@@ -113,7 +113,7 @@
                 </tr>
                 <tr>
 				    <td colspan="5">
-				        <table cellpadding="5" cellspacing="0" border="0">
+				        <table class="table table-striped table-bordered dataTable" cellpadding="5" cellspacing="0" border="0">
 				            <tbody>
 				                <tr>
 				                    <td>Description:</td>
