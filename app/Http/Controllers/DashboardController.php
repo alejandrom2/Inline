@@ -133,7 +133,8 @@ class DashboardController extends Controller
     }
     public function getRequirementCreate()
     {
-        return view('requirement-create');
+        $requirements = Requirements::all();
+        return view('requirement-create',compact('requirements'));
     }
     public function postRequirementCreate(RequirementRequest $request)
     {

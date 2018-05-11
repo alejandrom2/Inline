@@ -80,7 +80,7 @@
             </a>
           </li>
           <li>
-            <a href="{{url('/requirements')}}">
+            <a href="{{url('/requirement')}}">
               <i class="fa fa-handshake"></i>
               <p>Requirements</p>
             </a>
