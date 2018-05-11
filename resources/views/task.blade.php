@@ -19,6 +19,7 @@
               <th>ID</th>
               <th>Name</th>
               <th>Assigned To</th>
+              <th>Status</th>
               <th>Start Date</th>
               <th>Due Date</th>
             </tr>
@@ -28,6 +29,7 @@
               <th>ID</th>
               <th>Name</th>
               <th>Assigned To</th>
+              <th>Status</th>
               <th>Start Date</th>
               <th>Due Date</th>
             </tr>
