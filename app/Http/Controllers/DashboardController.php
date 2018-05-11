@@ -160,14 +160,15 @@ class DashboardController extends Controller
      * Issues Get, Create Page, Post Create with Validation
      */
 
-    public function getIssues()
+    public function getIssue()
     {
         $issues = Issues::all();
         return view('issues',compact('issues'));
     }
     public function getIssueCreate()
     {
-        return view('issues-create');
+        $issues = Issues::all();
+        return view('issue-create',compact('issues'));
     }
     public function postIssueCreate(IssueRequest $request)
     {

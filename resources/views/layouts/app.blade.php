@@ -50,7 +50,7 @@
             </a>
           </li>
           <li>
-            <a href="{{url('/issues')}}">
+            <a href="{{url('/issue')}}">
               <i class="fa fa-exclamation-triangle"></i>
               <p>Issues</p>
             </a>

@@ -44,4 +44,8 @@ Route::get('/risk','DashboardController@getRisk')->name('getRisk');
 Route::get('/risk/create','DashboardController@getRiskCreate')->name('getRiskCreate');
 Route::post('/risk/create','DashboardController@postRiskCreate')->name('postRiskCreate');
 
+Route::get('/issue','DashboardController@getIssue')->name('getIssue');
+Route::get('/issue/create','DashboardController@getIssueCreate')->name('getIssuesCreate');
+Route::post('/issue/create','DashboardController@postIssueCreate')->name('postIssuesCreate');
+
 Auth::routes();
