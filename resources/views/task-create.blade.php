@@ -129,8 +129,8 @@
                   <td>{{$task->end_date?:"N/A"}}</td>
                 </tr>
                 <tr>
-				    <td colspan="5">
-				        <table class="table table-striped table-bordered dataTable" cellpadding="5" cellspacing="0" border="0">
+				    <td colspan="6">
+				        <table class="table table-striped table-bordered dataTable" cellpadding="6" cellspacing="0" border="0">
 				            <tbody>
 				                <tr>
 				                    <td>Description:</td>

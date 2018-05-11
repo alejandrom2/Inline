@@ -38,12 +38,13 @@
                   <td>{{$task->id}}</td>
                   <td>{{$task->name}}</td>
                   <td>{{$task->resource_assigned}}</td>
+                  <td>{{$task->status}}</td>
                   <td>{{$task->start_date}}</td>
                   <td>{{$task->end_date?:"N/A"}}</td>
                 </tr>
                 <tr>
-				    <td colspan="5">
-				        <table cellpadding="5" cellspacing="0" border="0">
+				    <td colspan="6">
+				        <table cellpadding="6" cellspacing="0" border="0">
 				            <tbody>
 				                <tr>
 				                    <td>Description:</td>
