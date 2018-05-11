@@ -35,7 +35,7 @@ Route::get('/requirement/create','DashboardController@getRequirementCreate')->na
 Route::post('/requirement/create','DashboardController@postRequirementCreate')->name('postRequirementCreate');
 
 
-Route::get('/change','DashboardController@getChange')->name('getChange');
+Route::get('/change','DashboardController@getChanges')->name('getChanges');
 Route::get('/change/create','DashboardController@getChangeCreate')->name('getChangeCreate');
 Route::post('/change/create','DashboardController@postChangeCreate')->name('postChangeCreate');
 

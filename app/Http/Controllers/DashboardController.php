@@ -11,6 +11,7 @@ use App\Reference;
 use App\Requirements;
 use App\Issues;
 use App\Risk;
+use App\Change;
 
 use App\Http\Requests\TaskRequest;
 use App\Http\Requests\DeliverableRequest;
@@ -192,12 +193,13 @@ class DashboardController extends Controller
 
     public function getChanges()
     {
-        $changes = Changes::all();
+        $changes = Change::all();
         return view('changes',compact('changes'));
     }
-    public function getChangesCreate()
+    public function getChangeCreate()
     {
-        return view('change-create');
+        $changes = Change::all();
+        return view('change-create',compact('changes'));
     }
     public function postChangeCreate(ChangeRequest $request)
     {

@@ -44,7 +44,7 @@
             </a>
           </li>
           <li>
-            <a href="{{url('/changes')}}">
+            <a href="{{url('/change')}}">
               <i class="fa fa-pencil-alt"></i>
               <p>Changes</p>
             </a>
