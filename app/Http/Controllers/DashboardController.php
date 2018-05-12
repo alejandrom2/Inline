@@ -251,4 +251,35 @@ class DashboardController extends Controller
         return redirect()->route('getRisk');
     }
 
+
+    public function getActionItem()
+    {
+        $actionItems = ActionItem::all();
+        return view('actionItem',compact('actionItems'));
+    }
+    public function getActionItemCreate()
+    {
+        $actionItems = ActionItem::all();
+        return view('actionItem-create',compact('actionItems'));
+    }
+    public function postActionItemCreate(ActionItemRequest $request)
+    {
+        ActionItem::create([
+            'name'           => $requested['name'],
+            'priority'       => $requested['priority'],
+            'severity'       => $requested['severity'],
+            'status'         => $requested['status'],
+            'description'    => $requested['description'],
+            'date_created'   => Carbon::parse($requested['date_created']),
+            'date_assigned'  => Carbon::parse($requested['date_assigned']),
+            'date_expected'  => Carbon::parse($requested['date_expected']),
+            'date_completed' => Carbon::parse($requested['date_completed'])
+        ]);
+
+        Session::flash('message', "Action Item Created Successfully");
+
+        return redirect()->route('getActionItem');
+    }
+
+
 }

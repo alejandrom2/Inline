@@ -48,4 +48,8 @@ Route::get('/issue','DashboardController@getIssue')->name('getIssue');
 Route::get('/issue/create','DashboardController@getIssueCreate')->name('getIssuesCreate');
 Route::post('/issue/create','DashboardController@postIssueCreate')->name('postIssuesCreate');
 
+Route::get('/action-item','DashboardController@getActionItem')->name('getIssue');
+Route::get('/action-item/create','DashboardController@getActionItemCreate')->name('getActionItemCreate');
+Route::post('/action-item/create','DashboardController@postActionItemCreate')->name('postActionItemCreate');
+
 Auth::routes();

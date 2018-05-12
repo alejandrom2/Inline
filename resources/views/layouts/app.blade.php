@@ -56,13 +56,13 @@
             </a>
           </li>
           <li>
-            <a href="{{url('/resources')}}">
+            <a href="{{url('/resource')}}">
               <i class="fa fa-users"></i>
               <p>Resources</p>
             </a>
           </li>
           <li>
-            <a href="{{url('/decisions')}}">
+            <a href="{{url('/decision')}}">
               <i class="fa fa-comments"></i>
               <p>Decisions</p>
             </a>
